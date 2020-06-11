@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "npx tsdx watch",
+    "build:ts": "npx tsdx build",
+    "build:contracts": "npx buidler compile",
+    "build": "npm run build:contracts && npm run generate-types && npm run build:ts",
+    "test": "npm run test:ts && npm run test:contracts",
+    "test:ts": "npx tsdx test",
+    "test:contracts": "npx buidler test",
+    "lint": "npm run lint:ts",
+    "lint:ts": "npx tsdx lint --fix",
+    "prepare": "npm run build",
+    "generate-types": "npx typechain --target ethers-v4 --outDir typechain 'artifacts/*.json'"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "tsdx-typechain",
+  "author": "Paul Cowgill",
+  "module": "dist/tsdx-typechain.esm.js",
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.3.6",
+    "@nomiclabs/buidler-ethers": "^1.3.3",
+    "@nomiclabs/buidler-waffle": "^1.3.4",
+    "@typechain/ethers-v4": "^1.0.0",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.5.1",
+    "ethers": "^4.0.47",
+    "husky": "^4.2.5",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.0",
+    "typechain": "^2.0.0",
+    "typescript": "^3.9.5"
+  }
+}
