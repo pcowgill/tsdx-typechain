@@ -13,6 +13,7 @@
   "scripts": {
     "start": "npx tsdx watch",
     "build:ts": "npx tsdx build",
+    "build-with-tsc:ts": "npx tsc --outDir dist",
     "build:contracts": "npx buidler compile",
     "build": "npm run build:contracts && npm run generate-types && npm run build:ts",
     "test": "npm run test:ts && npm run test:contracts",
