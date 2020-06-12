@@ -8,12 +8,12 @@ The goal is to be able to expose typings for specific smart contracts as an npm 
 
 ## Error that currently is a blocker
 
-This line - `import { Greeter } from "../typechain/Greeter";` - isn't working.
+This line - `import { Greeter } from "../types/Greeter";` - isn't working.
 
 I might need to configure Rollup via TSDX, there might be a simple change to the tsconfig.json that can address it, or maybe something else needs to be done.
 
 ```
-Error: Could not resolve '../typechain/Greeter' from src/index.ts
+Error: Could not resolve '../types/Greeter' from src/index.ts
 
     at error (/Users/paulcowgill/Code/tsdx-typechain/node_modules/rollup/dist/shared/node-entry.js:5400:30)
 

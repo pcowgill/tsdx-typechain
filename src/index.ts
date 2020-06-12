@@ -1,4 +1,4 @@
-import { Greeter } from '../typechain/Greeter';
+import { Greeter } from '../types/Greeter';
 
 export const sum = (a: number, b: number) => {
   if ('development' === process.env.NODE_ENV) {

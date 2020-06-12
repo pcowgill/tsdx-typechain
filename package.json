@@ -21,7 +21,7 @@
     "lint": "npm run lint:ts",
     "lint:ts": "npx tsdx lint --fix",
     "prepare": "npm run build",
-    "generate-types": "npx typechain --target ethers-v4 --outDir typechain 'artifacts/*.json'"
+    "generate-types": "npx typechain --target ethers-v4 --outDir types 'artifacts/*.json'"
   },
   "peerDependencies": {},
   "husky": {
