@@ -1,6 +1,11 @@
 // import { ethers } from "ethers"
-import Greeter from '../artifacts/Greeter.json';
-import { Greeter as GreeterType } from './types/Greeter';
+import Greeter from './artifacts/Greeter.json';
+
+// TODO: Find a better solution to getting prettier to understand
+// this TypeScript import type syntax
+// Parsing error: '=' expected  prettier/prettier
+// eslint-disable-next-line prettier/prettier
+import type { Greeter as GreeterType } from './types/Greeter';
 // import { GreeterFactory } from './types/GreeterFactory';
 
 export const sum = (a: number, b: number) => {
@@ -22,6 +27,7 @@ export const sum = (a: number, b: number) => {
 // let greeter: GreeterType
 
 export const types = {
-  Greeter,
-  GreeterType,
+  Greeter
 };
+
+export type { GreeterType };
