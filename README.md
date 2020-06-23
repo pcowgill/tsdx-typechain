@@ -26,6 +26,15 @@ Error: Could not resolve '../typechain/Greeter' from src/index.ts
     at fulfilled (/Users/paulcowgill/Code/tsdx-typechain/node_modules/rollup/dist/shared/node-entry.js:38:28)
 ```
 
+## Solution
+
+`import type { Greeter } from "./types/Greeter";`
+
+Note: I also moved the types into the `src` dir and renamed the dir with the types from `typechain` to `types`, but that wasn't part of the fix for this specific bug.
+
+[TypeScript docs for the correct approach](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html)
+[GitHub issue where we found the solution](https://github.com/ethereum-ts/TypeChain/issues/247#issuecomment-648139358)
+
 ## Local Development
 
 Below is a list of commands you will probably find useful.
